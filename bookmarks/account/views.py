@@ -1,11 +1,12 @@
-from account.forms import (LoginForm, ProfileEditForm, UserEditForm,
-                           UserRegistrationForm)
-from account.models import Profile
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
+
+from account.forms import (LoginForm, ProfileEditForm, UserEditForm,
+                           UserRegistrationForm)
+from account.models import Profile
 
 
 @login_required
