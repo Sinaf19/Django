@@ -1,7 +1,7 @@
-from django.utils import timezone
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
-from django.conf import settings
+from django.utils import timezone
 from taggit.managers import TaggableManager
 
 

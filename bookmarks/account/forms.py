@@ -1,8 +1,8 @@
-from django import forms
+from account.models import Profile
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 
-from account.models import Profile
+from django import forms
 
 
 class LoginForm(forms.Form):

@@ -1,7 +1,8 @@
 import markdown
-from django import template
 from django.db.models import Count
 from django.utils.safestring import mark_safe
+
+from django import template
 
 from ..models import Post
 
