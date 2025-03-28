@@ -1,5 +1,5 @@
 """
-URL configuration for bookmarks project.
+URL configuration for educa project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -15,20 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
-
-from bookmarks import settings
+from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("account/", include("account.urls")),
-    path(
-        "social-auth/",
-        include("social_django.urls", namespace="social"),
-    ),
-    path("images/", include("images.urls", namespace="images")),
 ]
 
 if settings.DEBUG:
