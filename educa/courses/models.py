@@ -1,4 +1,4 @@
-from django.conf import settings
+from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
@@ -19,7 +19,7 @@ class Subject(models.Model):
 
 class Course(models.Model):
     owner = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
+        User,
         related_name="courses_created",
         on_delete=models.CASCADE
     )
@@ -81,7 +81,7 @@ class Content(models.Model):
 
 
 class ItemBase(models.Model):
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL,
+    owner = models.ForeignKey(User,
                               related_name='%(class)s_related',
                               on_delete=models.CASCADE
                               )
