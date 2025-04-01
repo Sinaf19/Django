@@ -1,3 +1,4 @@
+from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from django.forms import modelform_factory
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -150,3 +151,36 @@ class ContentDeleteView(View):
         content.item.delete()
         content.delete()
         return redirect("module_content_list", module.id)
+
+
+class ModuleContentListView(TemplateResponseMixin, View):
+    template_name = "courses/manage/module/content_list.html"
+
+    def get(self, request, module_id):
+        module = get_object_or_404(
+            Module, id=module_id, course__owner=request.user
+        )
+        return self.render_to_response(
+            {"module": module}
+        )
+
+
+# I will find a way to insert the CSRF token from the frontend in
+# an app I code myself, because this is a breach of security
+# and a major one at that !
+class ModuleOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
+    def post(self, request):
+        for id_order, new_order in self.request_json.items():
+            Module.objects.filter(
+                id=id_order, course__owner=request.user
+            ).update(order=new_order)
+        return self.render_json_response({"saved": "OK"})
+
+
+class ContentOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
+    def post(self, request):
+        for id_content, new_order in self.request_json.items():
+            Content.objects.filter(
+                id=id_content, module__course__owner=request.user
+            ).update(order=new_order)
+        return self.render_json_response({"saved":"OK"})
