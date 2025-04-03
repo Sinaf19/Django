@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "embed_video",
     "debug_toolbar",
     "students.apps.StudentsConfig",
@@ -159,5 +160,12 @@ CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
         "LOCATION": "127.0.0.1:11211",
+    }
+}
+
+# Rest framework settings
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": {
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
     }
 }
