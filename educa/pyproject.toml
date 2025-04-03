@@ -1,8 +1,5 @@
 target-version = "py313"
 
-[tool.isort]
-profile = "black"
-
 [tool.ruff]
 lint.select = ["E", "F"]
 lint.ignore = ["E501", "E741"]
