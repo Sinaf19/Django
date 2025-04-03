@@ -4,5 +4,5 @@ target-version = "py313"
 profile = "black"
 
 [tool.ruff]
-select = ["E", "F"]
-ignore = ["E501", "E741"]
+lint.select = ["E", "F"]
+lint.ignore = ["E501", "E741"]

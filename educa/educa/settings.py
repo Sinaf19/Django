@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "embed_video",
     "debug_toolbar",
     "students.apps.StudentsConfig",
+    "chat.apps.ChatConfig",
 ]
 
 MIDDLEWARE = [
