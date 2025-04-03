@@ -174,3 +174,11 @@ REST_FRAMEWORK = {
 
 # ASGI configuration
 ASGI_APPLICATION = "educa.asgi.application"
+
+# Channel layers configuration
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": [("127.0.0.1", 6379)]},
+    }
+}
