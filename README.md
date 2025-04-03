@@ -2,13 +2,13 @@
 
 ## Overview
 
-This repository documents my journey learning Django web framework using the book "Django 5 By 
+This repository documents my journey learning Django web framework using the book "Django 5 By
 Example" from O'Reilly Media. 📚
 
 ## Purpose
 
-As a software engineer, I'm using this repository to track my progress, store code examples, and 
-implement projects as I learn. Django is a high-level Python web framework that encourages rapid 
+As a software engineer, I'm using this repository to track my progress, store code examples, and
+implement projects as I learn. Django is a high-level Python web framework that encourages rapid
 development and clean, pragmatic design. 💻
 
 ## What I'm Learning 🧠
@@ -49,7 +49,7 @@ python manage.py runserver
 ```
 
 ## Projects 🏗️
-This repository will contain various Django projects as I progress through my learning journey, 
+This repository will contain various Django projects as I progress through my learning journey,
 including:
 
 - Blog applications
@@ -59,9 +59,9 @@ including:
 - And more!
 
 ## Notes 📝
-I'll be updating this repository regularly as I implement new features and applications. Feel free 
+I'll be updating this repository regularly as I implement new features and applications. Feel free
 to explore the code and follow along with my learning process!
 
 ## License 📜
-This project is for personal educational purposes. All code examples from the book "Django 5 By 
+This project is for personal educational purposes. All code examples from the book "Django 5 By
 Example" belong to their respective copyright holders.
