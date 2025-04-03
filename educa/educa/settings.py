@@ -153,3 +153,11 @@ DEBUG_TOOLBAR_PANELS = [
 
 # Redirect url after login
 LOGIN_REDIRECT_URL = reverse_lazy("student_course_list")
+
+# Cache settings
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
+        "LOCATION": "127.0.0.1:11211",
+    }
+}
