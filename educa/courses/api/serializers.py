@@ -20,12 +20,12 @@ class SubjectSerializer(serializers.ModelSerializer):
 
 class ModuleSerializer(serializers.ModelSerializer):
     class Meta:
-        module = Module
+        model = Module
         fields = ["order", "title", "description"]
 
 
 class CourseSerializer(serializers.ModelSerializer):
-    modules = serializers.ModuleSerializer(many=True, read_only=True)
+    modules = ModuleSerializer(many=True, read_only=True)
 
     class Meta:
         model = Course
