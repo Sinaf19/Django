@@ -4,7 +4,7 @@ from channels.generic.websocket import WebsocketConsumer
 
 
 class ChatConsumer(WebsocketConsumer):
-    def accept(self):
+    def connect(self):
         # accept connection
         self.accept()
 
