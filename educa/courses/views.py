@@ -1,19 +1,18 @@
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
-from django.db.models import Count
-from django.forms import modelform_factory
-from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse_lazy
-from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
-from django.views.generic.base import TemplateResponseMixin, View
-from django.views.generic.list import ListView
+from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.cache import cache
-
-from django.apps import apps
-
+from django.db.models import Count
+from django.forms import modelform_factory
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+from django.views.generic.base import TemplateResponseMixin, View
+from django.views.generic.list import ListView
 from students.forms import CourseEnrollForm
+
 from .forms import ModuleFormSet
-from .models import Course, Module, Content, Subject
+from .models import Content, Course, Module, Subject
 
 
 class OwnerMixin(object):

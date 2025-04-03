@@ -1,7 +1,6 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
-
 from images.forms import ImageCreateForm
 
 
@@ -24,7 +23,5 @@ def image_create(request):
         # build form with data provided by the bookmarklet via GET
         form = ImageCreateForm(data=request.GET)
     return render(
-        request,
-        "images/image/create.html",
-        {"section": "images", "form": form}
+        request, "images/image/create.html", {"section": "images", "form": form}
     )

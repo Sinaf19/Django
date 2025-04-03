@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("blog", "0002_remove_post_blog_post_publish_c4286e_idx_and_more"),
     ]

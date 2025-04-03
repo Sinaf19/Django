@@ -1,6 +1,6 @@
+from courses.models import Content, Course, Module, Subject
 from django.db.models import Count
 from rest_framework import serializers
-from courses.models import Subject, Course, Module, Content
 
 
 class SubjectSerializer(serializers.ModelSerializer):

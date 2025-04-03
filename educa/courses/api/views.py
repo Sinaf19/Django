@@ -1,21 +1,19 @@
+from courses.api.pagination import StandardPagination
+from courses.api.permissions import IsEnrolled
+from courses.api.serializers import (
+    CourseSerializer,
+    CourseWithContentsSerializer,
+    SubjectSerializer,
+)
+from courses.models import Course, Subject
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
-from rest_framework import generics
-from rest_framework import viewsets
+from rest_framework import generics, viewsets
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.decorators import action, authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
-from courses.api.pagination import StandardPagination
-from courses.api.permissions import IsEnrolled
-from courses.api.serializers import (
-    SubjectSerializer,
-    CourseSerializer,
-    CourseWithContentsSerializer,
-)
-from courses.models import Subject, Course
 
 
 class SubjectListView(generics.ListAPIView):

@@ -1,11 +1,10 @@
+from courses.models import Course
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, FormView, ListView, DetailView
-
-from courses.models import Course
+from django.views.generic import CreateView, DetailView, FormView, ListView
 from students.forms import CourseEnrollForm
 
 
@@ -58,9 +57,7 @@ class StudentCourseDetailView(LoginRequiredMixin, DetailView):
         course = self.get_object()
         if "module_id" in self.kwargs:
             # get current module
-            context["module"] = course.modules.get(
-                id=self.kwargs["module_id"]
-            )
+            context["module"] = course.modules.get(id=self.kwargs["module_id"])
         else:
             # get first module
             context["module"] = course.modules.all()[0]

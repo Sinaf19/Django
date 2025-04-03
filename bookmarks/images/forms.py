@@ -1,7 +1,8 @@
 import requests
-from django import forms
 from django.core.files.base import ContentFile
 from django.utils.text import slugify
+
+from django import forms
 
 from .models import Image
 
