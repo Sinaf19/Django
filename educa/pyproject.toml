@@ -5,3 +5,7 @@ target-version = "py313"
 
 [tool.isort]
 profile = "black"
+
+[tool.ruff]
+select = ["E", "F"]
+ignore = ["E501", "E741"]
